@@ -1,0 +1,9 @@
+../Middlewares/Solvine/Utils/src/qbuffer.c:15:6:qbufferInit	4	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:20:6:qbufferCreate	32	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:33:6:qbufferCreateBySize	32	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:46:6:qbufferWrite	48	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:81:6:qbufferRead	40	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:115:10:qbufferPeekWrite	16	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:120:10:qbufferPeekRead	16	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:126:10:qbufferAvailable	24	static
+../Middlewares/Solvine/Utils/src/qbuffer.c:136:6:qbufferFlush	16	static

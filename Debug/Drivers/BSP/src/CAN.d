@@ -1,4 +1,6 @@
-Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
+Drivers/BSP/src/CAN.o: ../Drivers/BSP/src/CAN.c \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/CAN.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h \
  ../Core/Inc/stm32h5xx_hal_conf.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rcc.h \
@@ -31,24 +33,14 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/RESET.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/RTC.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/FLASH.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/CAN.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BuildTime.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svUtils.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svTaskTimer.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svUtils.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svPlatform.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h
-../Core/Inc/main.h:
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/qbuffer.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/CAN.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
 ../Core/Inc/stm32h5xx_hal_conf.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rcc.h:
@@ -81,20 +73,9 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/RESET.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/RTC.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/FLASH.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/CAN.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BuildTime.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svUtils.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svTaskTimer.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svUtils.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svPlatform.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/qbuffer.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:

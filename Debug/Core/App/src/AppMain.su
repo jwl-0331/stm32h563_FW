@@ -1,2 +1,2 @@
-../Core/App/src/AppMain.c:23:6:AppMain	16	static,ignoring_inline_asm
-../Core/App/src/AppMain.c:142:6:HAL_GPIO_EXTI_Rising_Callback	16	static
+../Core/App/src/AppMain.c:24:6:AppMain	24	static,ignoring_inline_asm
+../Core/App/src/AppMain.c:146:6:HAL_GPIO_EXTI_Rising_Callback	16	static

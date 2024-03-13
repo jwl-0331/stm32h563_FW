@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Middlewares/Solvine/Utils/src/qbuffer.c \
 ../Middlewares/Solvine/Utils/src/svCLI.c \
 ../Middlewares/Solvine/Utils/src/svLinkBuffer.c \
 ../Middlewares/Solvine/Utils/src/svList.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 ../Middlewares/Solvine/Utils/src/svUtils.c 
 
 OBJS += \
+./Middlewares/Solvine/Utils/src/qbuffer.o \
 ./Middlewares/Solvine/Utils/src/svCLI.o \
 ./Middlewares/Solvine/Utils/src/svLinkBuffer.o \
 ./Middlewares/Solvine/Utils/src/svList.o \
@@ -23,6 +25,7 @@ OBJS += \
 ./Middlewares/Solvine/Utils/src/svUtils.o 
 
 C_DEPS += \
+./Middlewares/Solvine/Utils/src/qbuffer.d \
 ./Middlewares/Solvine/Utils/src/svCLI.d \
 ./Middlewares/Solvine/Utils/src/svLinkBuffer.d \
 ./Middlewares/Solvine/Utils/src/svList.d \
@@ -39,7 +42,7 @@ Middlewares/Solvine/Utils/src/%.o Middlewares/Solvine/Utils/src/%.su Middlewares
 clean: clean-Middlewares-2f-Solvine-2f-Utils-2f-src
 
 clean-Middlewares-2f-Solvine-2f-Utils-2f-src:
-	-$(RM) ./Middlewares/Solvine/Utils/src/svCLI.cyclo ./Middlewares/Solvine/Utils/src/svCLI.d ./Middlewares/Solvine/Utils/src/svCLI.o ./Middlewares/Solvine/Utils/src/svCLI.su ./Middlewares/Solvine/Utils/src/svLinkBuffer.cyclo ./Middlewares/Solvine/Utils/src/svLinkBuffer.d ./Middlewares/Solvine/Utils/src/svLinkBuffer.o ./Middlewares/Solvine/Utils/src/svLinkBuffer.su ./Middlewares/Solvine/Utils/src/svList.cyclo ./Middlewares/Solvine/Utils/src/svList.d ./Middlewares/Solvine/Utils/src/svList.o ./Middlewares/Solvine/Utils/src/svList.su ./Middlewares/Solvine/Utils/src/svOvRingBuffer.cyclo ./Middlewares/Solvine/Utils/src/svOvRingBuffer.d ./Middlewares/Solvine/Utils/src/svOvRingBuffer.o ./Middlewares/Solvine/Utils/src/svOvRingBuffer.su ./Middlewares/Solvine/Utils/src/svRingBuffer.cyclo ./Middlewares/Solvine/Utils/src/svRingBuffer.d ./Middlewares/Solvine/Utils/src/svRingBuffer.o ./Middlewares/Solvine/Utils/src/svRingBuffer.su ./Middlewares/Solvine/Utils/src/svTaskTimer.cyclo ./Middlewares/Solvine/Utils/src/svTaskTimer.d ./Middlewares/Solvine/Utils/src/svTaskTimer.o ./Middlewares/Solvine/Utils/src/svTaskTimer.su ./Middlewares/Solvine/Utils/src/svUtils.cyclo ./Middlewares/Solvine/Utils/src/svUtils.d ./Middlewares/Solvine/Utils/src/svUtils.o ./Middlewares/Solvine/Utils/src/svUtils.su
+	-$(RM) ./Middlewares/Solvine/Utils/src/qbuffer.cyclo ./Middlewares/Solvine/Utils/src/qbuffer.d ./Middlewares/Solvine/Utils/src/qbuffer.o ./Middlewares/Solvine/Utils/src/qbuffer.su ./Middlewares/Solvine/Utils/src/svCLI.cyclo ./Middlewares/Solvine/Utils/src/svCLI.d ./Middlewares/Solvine/Utils/src/svCLI.o ./Middlewares/Solvine/Utils/src/svCLI.su ./Middlewares/Solvine/Utils/src/svLinkBuffer.cyclo ./Middlewares/Solvine/Utils/src/svLinkBuffer.d ./Middlewares/Solvine/Utils/src/svLinkBuffer.o ./Middlewares/Solvine/Utils/src/svLinkBuffer.su ./Middlewares/Solvine/Utils/src/svList.cyclo ./Middlewares/Solvine/Utils/src/svList.d ./Middlewares/Solvine/Utils/src/svList.o ./Middlewares/Solvine/Utils/src/svList.su ./Middlewares/Solvine/Utils/src/svOvRingBuffer.cyclo ./Middlewares/Solvine/Utils/src/svOvRingBuffer.d ./Middlewares/Solvine/Utils/src/svOvRingBuffer.o ./Middlewares/Solvine/Utils/src/svOvRingBuffer.su ./Middlewares/Solvine/Utils/src/svRingBuffer.cyclo ./Middlewares/Solvine/Utils/src/svRingBuffer.d ./Middlewares/Solvine/Utils/src/svRingBuffer.o ./Middlewares/Solvine/Utils/src/svRingBuffer.su ./Middlewares/Solvine/Utils/src/svTaskTimer.cyclo ./Middlewares/Solvine/Utils/src/svTaskTimer.d ./Middlewares/Solvine/Utils/src/svTaskTimer.o ./Middlewares/Solvine/Utils/src/svTaskTimer.su ./Middlewares/Solvine/Utils/src/svUtils.cyclo ./Middlewares/Solvine/Utils/src/svUtils.d ./Middlewares/Solvine/Utils/src/svUtils.o ./Middlewares/Solvine/Utils/src/svUtils.su
 
 .PHONY: clean-Middlewares-2f-Solvine-2f-Utils-2f-src
 

@@ -12,6 +12,7 @@
 #include "RESET.h"
 #include "RTC.h"
 #include "FLASH.h"
+#include "CAN.h"
 
 #include "BuildTime.h"
 #include "svUtils.h"
@@ -30,6 +31,9 @@ void AppMain()
 
   svDebugInit();
   UART_Init(_DEF_UART1, 115200);
+
+  CAN_Init();
+  CAN_Open(_DEF_CAN1, CAN_NORMAL, CAN_CLASSIC, CAN_1M, CAN_2M);
   // Chk Reset Count
   uint32_t pre_time = HAL_GetTick();
 

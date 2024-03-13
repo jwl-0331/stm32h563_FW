@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Drivers/BSP/src/CAN.c \
 ../Drivers/BSP/src/FLASH.c \
 ../Drivers/BSP/src/LED.c \
 ../Drivers/BSP/src/RESET.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 ../Drivers/BSP/src/svPlatform.c 
 
 OBJS += \
+./Drivers/BSP/src/CAN.o \
 ./Drivers/BSP/src/FLASH.o \
 ./Drivers/BSP/src/LED.o \
 ./Drivers/BSP/src/RESET.o \
@@ -25,6 +27,7 @@ OBJS += \
 ./Drivers/BSP/src/svPlatform.o 
 
 C_DEPS += \
+./Drivers/BSP/src/CAN.d \
 ./Drivers/BSP/src/FLASH.d \
 ./Drivers/BSP/src/LED.d \
 ./Drivers/BSP/src/RESET.d \
@@ -42,7 +45,7 @@ Drivers/BSP/src/%.o Drivers/BSP/src/%.su Drivers/BSP/src/%.cyclo: ../Drivers/BSP
 clean: clean-Drivers-2f-BSP-2f-src
 
 clean-Drivers-2f-BSP-2f-src:
-	-$(RM) ./Drivers/BSP/src/FLASH.cyclo ./Drivers/BSP/src/FLASH.d ./Drivers/BSP/src/FLASH.o ./Drivers/BSP/src/FLASH.su ./Drivers/BSP/src/LED.cyclo ./Drivers/BSP/src/LED.d ./Drivers/BSP/src/LED.o ./Drivers/BSP/src/LED.su ./Drivers/BSP/src/RESET.cyclo ./Drivers/BSP/src/RESET.d ./Drivers/BSP/src/RESET.o ./Drivers/BSP/src/RESET.su ./Drivers/BSP/src/RTC.cyclo ./Drivers/BSP/src/RTC.d ./Drivers/BSP/src/RTC.o ./Drivers/BSP/src/RTC.su ./Drivers/BSP/src/UART.cyclo ./Drivers/BSP/src/UART.d ./Drivers/BSP/src/UART.o ./Drivers/BSP/src/UART.su ./Drivers/BSP/src/printf.cyclo ./Drivers/BSP/src/printf.d ./Drivers/BSP/src/printf.o ./Drivers/BSP/src/printf.su ./Drivers/BSP/src/svDebug.cyclo ./Drivers/BSP/src/svDebug.d ./Drivers/BSP/src/svDebug.o ./Drivers/BSP/src/svDebug.su ./Drivers/BSP/src/svPlatform.cyclo ./Drivers/BSP/src/svPlatform.d ./Drivers/BSP/src/svPlatform.o ./Drivers/BSP/src/svPlatform.su
+	-$(RM) ./Drivers/BSP/src/CAN.cyclo ./Drivers/BSP/src/CAN.d ./Drivers/BSP/src/CAN.o ./Drivers/BSP/src/CAN.su ./Drivers/BSP/src/FLASH.cyclo ./Drivers/BSP/src/FLASH.d ./Drivers/BSP/src/FLASH.o ./Drivers/BSP/src/FLASH.su ./Drivers/BSP/src/LED.cyclo ./Drivers/BSP/src/LED.d ./Drivers/BSP/src/LED.o ./Drivers/BSP/src/LED.su ./Drivers/BSP/src/RESET.cyclo ./Drivers/BSP/src/RESET.d ./Drivers/BSP/src/RESET.o ./Drivers/BSP/src/RESET.su ./Drivers/BSP/src/RTC.cyclo ./Drivers/BSP/src/RTC.d ./Drivers/BSP/src/RTC.o ./Drivers/BSP/src/RTC.su ./Drivers/BSP/src/UART.cyclo ./Drivers/BSP/src/UART.d ./Drivers/BSP/src/UART.o ./Drivers/BSP/src/UART.su ./Drivers/BSP/src/printf.cyclo ./Drivers/BSP/src/printf.d ./Drivers/BSP/src/printf.o ./Drivers/BSP/src/printf.su ./Drivers/BSP/src/svDebug.cyclo ./Drivers/BSP/src/svDebug.d ./Drivers/BSP/src/svDebug.o ./Drivers/BSP/src/svDebug.su ./Drivers/BSP/src/svPlatform.cyclo ./Drivers/BSP/src/svPlatform.d ./Drivers/BSP/src/svPlatform.o ./Drivers/BSP/src/svPlatform.su
 
 .PHONY: clean-Drivers-2f-BSP-2f-src
 

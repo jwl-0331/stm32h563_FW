@@ -115,17 +115,6 @@ int main(void)
   AppMain();
   /* USER CODE END 2 */
 
-  /* Init scheduler */
-  osKernelInitialize();
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
@@ -147,7 +136,7 @@ void SystemClock_Config(void)
 
   /** Configure the main internal regulator output voltage
   */
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE0);
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
 
   while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
 
@@ -160,13 +149,13 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLL1_SOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 62;
+  RCC_OscInitStruct.PLL.PLLN = 20;
   RCC_OscInitStruct.PLL.PLLP = 2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
   RCC_OscInitStruct.PLL.PLLR = 2;
   RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1_VCIRANGE_3;
   RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1_VCORANGE_WIDE;
-  RCC_OscInitStruct.PLL.PLLFRACN = 4096;
+  RCC_OscInitStruct.PLL.PLLFRACN = 0;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -183,7 +172,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB3CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -345,11 +334,11 @@ static void MX_LPUART1_UART_Init(void)
 //{
 //
 //  /* USER CODE BEGIN USART2_Init 0 */
-//////////
+////////////
 //  /* USER CODE END USART2_Init 0 */
 //
 //  /* USER CODE BEGIN USART2_Init 1 */
-//////////
+////////////
 //  /* USER CODE END USART2_Init 1 */
 //  huart2.Instance = USART2;
 //  huart2.Init.BaudRate = 115200;
@@ -379,7 +368,7 @@ static void MX_LPUART1_UART_Init(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN USART2_Init 2 */
-////////////
+//////////////
 //  /* USER CODE END USART2_Init 2 */
 //
 //}
@@ -441,13 +430,13 @@ static void MX_USART3_UART_Init(void)
 //{
 //
 //  /* USER CODE BEGIN RTC_Init 0 */
-//
+////
 //  /* USER CODE END RTC_Init 0 */
 //
 //  RTC_PrivilegeStateTypeDef privilegeState = {0};
 //
 //  /* USER CODE BEGIN RTC_Init 1 */
-//
+////
 //  /* USER CODE END RTC_Init 1 */
 //
 //  /** Initialize RTC Only
@@ -475,7 +464,7 @@ static void MX_USART3_UART_Init(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN RTC_Init 2 */
-//
+////
 //  /* USER CODE END RTC_Init 2 */
 //
 //}
