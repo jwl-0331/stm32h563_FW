@@ -1,0 +1,6 @@
+../Middlewares/Solvine/Utils/src/svTaskTimer.c:14:6:svTaskTimer_InitTimers	24	static
+../Middlewares/Solvine/Utils/src/svTaskTimer.c:28:6:svTaskTimer_KillAllTimers	24	static
+../Middlewares/Solvine/Utils/src/svTaskTimer.c:35:6:svTaskTimer_SetTimer	32	static
+../Middlewares/Solvine/Utils/src/svTaskTimer.c:64:6:svTaskTimer_KillTimer	16	static
+../Middlewares/Solvine/Utils/src/svTaskTimer.c:73:6:svTaskTimer_IsTimerRunning	16	static
+../Middlewares/Solvine/Utils/src/svTaskTimer.c:81:6:svTaskTimer_CheckTimers	40	static

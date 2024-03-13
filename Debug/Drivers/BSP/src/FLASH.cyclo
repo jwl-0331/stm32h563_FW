@@ -1,0 +1,6 @@
+../Drivers/BSP/src/FLASH.c:30:6:Flash_Init	1
+../Drivers/BSP/src/FLASH.c:37:6:Flash_Erase	6
+../Drivers/BSP/src/FLASH.c:87:6:Flash_InSector	9
+../Drivers/BSP/src/FLASH.c:126:6:Flash_Write	12
+../Drivers/BSP/src/FLASH.c:198:6:Flash_Read	2
+../Drivers/BSP/src/FLASH.c:218:13:CLI_FlashTest	17

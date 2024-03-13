@@ -1,0 +1,2 @@
+../Core/App/src/AppMain.c:23:6:AppMain	2
+../Core/App/src/AppMain.c:142:6:HAL_GPIO_EXTI_Rising_Callback	2

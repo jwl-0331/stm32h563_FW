@@ -1,0 +1,6 @@
+../Drivers/BSP/src/FLASH.c:30:6:Flash_Init	16	static
+../Drivers/BSP/src/FLASH.c:37:6:Flash_Erase	56	static
+../Drivers/BSP/src/FLASH.c:87:6:Flash_InSector	48	static
+../Drivers/BSP/src/FLASH.c:126:6:Flash_Write	80	static
+../Drivers/BSP/src/FLASH.c:198:6:Flash_Read	40	static
+../Drivers/BSP/src/FLASH.c:218:13:CLI_FlashTest	112	static

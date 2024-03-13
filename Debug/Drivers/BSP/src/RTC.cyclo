@@ -1,0 +1,2 @@
+../Drivers/BSP/src/RTC.c:11:10:RTC_ReadBackupReg	1
+../Drivers/BSP/src/RTC.c:16:6:RTC_WriteBackupReg	1
