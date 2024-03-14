@@ -24,4 +24,4 @@
 ../Drivers/BSP/src/CAN.c:609:6:HAL_FDCAN_RxFifo0Callback	16	static
 ../Drivers/BSP/src/CAN.c:627:6:HAL_FDCAN_MspInit	312	static
 ../Drivers/BSP/src/CAN.c:671:6:HAL_FDCAN_MspDeInit	16	static
-../Drivers/BSP/src/CAN.c:698:13:CLI_FDCANTest	120	static
+../Drivers/BSP/src/CAN.c:698:13:CLI_FDCANTest	144	static

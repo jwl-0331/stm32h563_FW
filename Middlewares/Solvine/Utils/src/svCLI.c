@@ -8,6 +8,7 @@
 #include "BSPConfig.h"
 #include "svCLI.h"
 #include "ASCII_escape.h"
+#include "UART.h"
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -116,6 +117,19 @@ void svCLI_ShowHelp(void)
 	if (svCommit) {
 		svCommit();
 	}
+}
+
+// FOR CAN SVCLI
+BOOL svCLI_KeepLoop(void)
+{
+  if (Uart_Available(_DEF_UART1) == 0)
+  {
+    return TRUE;
+  }
+  else
+  {
+    return FALSE;
+  }
 }
 
 // String length after stripped off space[0x20]

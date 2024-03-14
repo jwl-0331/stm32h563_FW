@@ -510,7 +510,7 @@ BOOL     CAN_Update(void)
       case 0:
         if (p_can->err_code & CAN_ERR_BUS_OFF)
         {
-          canRecovery(i);
+          CAN_Recovery(i);
           p_can->state = 1;
           ret = TRUE;
         }
@@ -694,7 +694,7 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* hfdcan)
 }
 
 #ifdef USE_CLI_FUNCTIONS
-SVCLI_TABLE_ENTRY (CAN_TEST, "CAN", "CAN [1(INFO),2(READ),3(SEND)] [0x0800 F000 ~ address]", CLI_FDCANTest)
+SVCLI_TABLE_ENTRY (CAN_TEST, "CAN", "CAN [1(INFO),2(READ),3(SEND)] [SEND ID]", CLI_FDCANTest)
 static void CLI_FDCANTest(char *pArgLine, unsigned int nCount, unsigned int nFirst, unsigned int nAddress)
 {
   BOOL ret = FALSE;
@@ -717,7 +717,7 @@ static void CLI_FDCANTest(char *pArgLine, unsigned int nCount, unsigned int nFir
         break;
       case 2:
         uint32_t index = 0;
-        while(1)
+        while(svCLI_KeepLoop())
         {
           if (CAN_MsgAvailable(_DEF_CAN1))
           {
@@ -743,6 +743,97 @@ static void CLI_FDCANTest(char *pArgLine, unsigned int nCount, unsigned int nFir
             DebugMsg(DEBUGMSG_CLI,"\n");
           }
         }
+      case 3:
+        uint32_t pre_time;
+        uint32_t num = 0;
+        uint32_t err_code;
+
+
+        err_code = can_tbl[_DEF_CAN1].err_code;
+
+        while(svCLI_KeepLoop())
+        {
+          CAN_MSG_t msg;
+
+          if (HAL_GetTick()-pre_time >= 1000)
+          {
+            pre_time = HAL_GetTick();
+
+            msg.frame   = CAN_CLASSIC;
+            msg.id_type = CAN_EXT;
+            msg.dlc     = CAN_DLC_2;
+            msg.id      = nAddress;
+            msg.length  = 2;
+            msg.data[0] = 1;
+            msg.data[1] = 2;
+            if (CAN_MsgWrite(_DEF_CAN1, &msg, 10) > 0)
+            {
+              index %= 1000;
+              DebugMsg(DEBUGMSG_CLI,"%03d(T) -> id ", num++);
+              if (msg.id_type == CAN_STD)
+              {
+                DebugMsg(DEBUGMSG_CLI,"std ");
+              }
+              else
+              {
+                DebugMsg(DEBUGMSG_CLI,"ext ");
+              }
+              DebugMsg(DEBUGMSG_CLI, ": 0x%08X, L:%02d, ", msg.id, msg.length);
+              for (int i=0; i<msg.length; i++)
+              {
+                DebugMsg(DEBUGMSG_CLI,"0x%02X ", msg.data[i]);
+              }
+              DebugMsg(DEBUGMSG_CLI,"\n");
+            }
+
+            if (CAN_GetRxErrCount(_DEF_CAN1) > 0 || CAN_GetTxErrCount(_DEF_CAN1) > 0)
+            {
+              DebugMsg(DEBUGMSG_CLI,"ErrCnt : %d, %d\n", CAN_GetRxErrCount(_DEF_CAN1), CAN_GetTxErrCount(_DEF_CAN1));
+            }
+
+            if (err_int_cnt > 0)
+            {
+              DebugMsg(DEBUGMSG_CLI,"Cnt : %d\n",err_int_cnt);
+              err_int_cnt = 0;
+            }
+          }
+
+          if (can_tbl[_DEF_CAN1].err_code != err_code)
+          {
+            DebugMsg(DEBUGMSG_CLI, "ErrCode : 0x%X\n", can_tbl[_DEF_CAN1].err_code);
+            CAN_ErrPrint(_DEF_CAN1);
+            err_code = can_tbl[_DEF_CAN1].err_code;
+          }
+
+          if (CAN_Update())
+          {
+            DebugMsg(DEBUGMSG_CLI,"BusOff Recovery\n");
+          }
+
+
+          if (CAN_MsgAvailable(_DEF_CAN1))
+          {
+            CAN_MsgRead(_DEF_CAN1, &msg);
+
+            index %= 1000;
+            DebugMsg(DEBUGMSG_CLI,"%03d(R) <- id ", num++);
+            if (msg.id_type == CAN_STD)
+            {
+              DebugMsg(DEBUGMSG_CLI, "std ");
+            }
+            else
+            {
+              DebugMsg(DEBUGMSG_CLI, "ext ");
+            }
+            DebugMsg(DEBUGMSG_CLI,": 0x%08X, L:%02d, ", msg.id, msg.length);
+            for (int i=0; i<msg.length; i++)
+            {
+              DebugMsg(DEBUGMSG_CLI,"0x%02X ", msg.data[i]);
+            }
+            DebugMsg(DEBUGMSG_CLI,"\n");
+          }
+        }
+        ret = TRUE;
     }
   }
 }
