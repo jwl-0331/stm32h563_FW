@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "string.h"
 #include "cmsis_os2.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -42,6 +43,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 
+//ETH_TxPacketConfig TxConfig;
+//ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
+//ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
+//
+//ETH_HandleTypeDef heth;
+
 FDCAN_HandleTypeDef hfdcan1;
 
 UART_HandleTypeDef hlpuart1;
@@ -64,7 +71,8 @@ static void MX_ICACHE_Init(void);
 //static void MX_RTC_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_FDCAN1_Init(void);
+//static void MX_FDCAN1_Init(void);
+//static void MX_ETH_Init(void);
 /* USER CODE BEGIN PFP */
 
 extern void AppMain(void);
@@ -109,12 +117,15 @@ int main(void)
   //MX_RTC_Init();
   MX_LPUART1_UART_Init();
   MX_USART3_UART_Init();
-  MX_FDCAN1_Init();
+  //MX_FDCAN1_Init();
+  //MX_ETH_Init();
   /* USER CODE BEGIN 2 */
 
   AppMain();
   /* USER CODE END 2 */
 
+  /* We should never get here as control is now taken by the scheduler */
+  /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
@@ -179,47 +190,96 @@ void SystemClock_Config(void)
 }
 
 /**
+  * @brief ETH Initialization Function
+  * @param None
+  * @retval None
+  */
+//static void MX_ETH_Init(void)
+//{
+//
+//  /* USER CODE BEGIN ETH_Init 0 */
+//
+//  /* USER CODE END ETH_Init 0 */
+//
+//   static uint8_t MACAddr[6];
+//
+//  /* USER CODE BEGIN ETH_Init 1 */
+//
+//  /* USER CODE END ETH_Init 1 */
+//  heth.Instance = ETH;
+//  MACAddr[0] = 0x00;
+//  MACAddr[1] = 0x80;
+//  MACAddr[2] = 0xE1;
+//  MACAddr[3] = 0x00;
+//  MACAddr[4] = 0x00;
+//  MACAddr[5] = 0x00;
+//  heth.Init.MACAddr = &MACAddr[0];
+//  heth.Init.MediaInterface = HAL_ETH_RMII_MODE;
+//  heth.Init.TxDesc = DMATxDscrTab;
+//  heth.Init.RxDesc = DMARxDscrTab;
+//  heth.Init.RxBuffLen = 1524;
+//
+//  /* USER CODE BEGIN MACADDRESS */
+//
+//  /* USER CODE END MACADDRESS */
+//
+//  if (HAL_ETH_Init(&heth) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//
+//  memset(&TxConfig, 0 , sizeof(ETH_TxPacketConfig));
+//  TxConfig.Attributes = ETH_TX_PACKETS_FEATURES_CSUM | ETH_TX_PACKETS_FEATURES_CRCPAD;
+//  TxConfig.ChecksumCtrl = ETH_CHECKSUM_IPHDR_PAYLOAD_INSERT_PHDR_CALC;
+//  TxConfig.CRCPadCtrl = ETH_CRC_PAD_INSERT;
+//  /* USER CODE BEGIN ETH_Init 2 */
+//
+//  /* USER CODE END ETH_Init 2 */
+//
+//}
+
+/**
   * @brief FDCAN1 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_FDCAN1_Init(void)
-{
-
-  /* USER CODE BEGIN FDCAN1_Init 0 */
-
-  /* USER CODE END FDCAN1_Init 0 */
-
-  /* USER CODE BEGIN FDCAN1_Init 1 */
-
-  /* USER CODE END FDCAN1_Init 1 */
-  hfdcan1.Instance = FDCAN1;
-  hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
-  hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
-  hfdcan1.Init.AutoRetransmission = DISABLE;
-  hfdcan1.Init.TransmitPause = DISABLE;
-  hfdcan1.Init.ProtocolException = DISABLE;
-  hfdcan1.Init.NominalPrescaler = 16;
-  hfdcan1.Init.NominalSyncJumpWidth = 1;
-  hfdcan1.Init.NominalTimeSeg1 = 2;
-  hfdcan1.Init.NominalTimeSeg2 = 2;
-  hfdcan1.Init.DataPrescaler = 1;
-  hfdcan1.Init.DataSyncJumpWidth = 1;
-  hfdcan1.Init.DataTimeSeg1 = 1;
-  hfdcan1.Init.DataTimeSeg2 = 1;
-  hfdcan1.Init.StdFiltersNbr = 0;
-  hfdcan1.Init.ExtFiltersNbr = 0;
-  hfdcan1.Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
-  if (HAL_FDCAN_Init(&hfdcan1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN FDCAN1_Init 2 */
-
-  /* USER CODE END FDCAN1_Init 2 */
-
-}
+//static void MX_FDCAN1_Init(void)
+//{
+//
+//  /* USER CODE BEGIN FDCAN1_Init 0 */
+//
+//  /* USER CODE END FDCAN1_Init 0 */
+//
+//  /* USER CODE BEGIN FDCAN1_Init 1 */
+//
+//  /* USER CODE END FDCAN1_Init 1 */
+//  hfdcan1.Instance = FDCAN1;
+//  hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
+//  hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
+//  hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
+//  hfdcan1.Init.AutoRetransmission = DISABLE;
+//  hfdcan1.Init.TransmitPause = DISABLE;
+//  hfdcan1.Init.ProtocolException = DISABLE;
+//  hfdcan1.Init.NominalPrescaler = 16;
+//  hfdcan1.Init.NominalSyncJumpWidth = 1;
+//  hfdcan1.Init.NominalTimeSeg1 = 2;
+//  hfdcan1.Init.NominalTimeSeg2 = 2;
+//  hfdcan1.Init.DataPrescaler = 1;
+//  hfdcan1.Init.DataSyncJumpWidth = 1;
+//  hfdcan1.Init.DataTimeSeg1 = 1;
+//  hfdcan1.Init.DataTimeSeg2 = 1;
+//  hfdcan1.Init.StdFiltersNbr = 0;
+//  hfdcan1.Init.ExtFiltersNbr = 0;
+//  hfdcan1.Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
+//  if (HAL_FDCAN_Init(&hfdcan1) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//  /* USER CODE BEGIN FDCAN1_Init 2 */
+//
+//  /* USER CODE END FDCAN1_Init 2 */
+//
+//}
 
 /**
   * @brief FLASH Initialization Function
@@ -334,11 +394,11 @@ static void MX_LPUART1_UART_Init(void)
 //{
 //
 //  /* USER CODE BEGIN USART2_Init 0 */
-////////////
+//////////////
 //  /* USER CODE END USART2_Init 0 */
 //
 //  /* USER CODE BEGIN USART2_Init 1 */
-////////////
+//////////////
 //  /* USER CODE END USART2_Init 1 */
 //  huart2.Instance = USART2;
 //  huart2.Init.BaudRate = 115200;
@@ -368,7 +428,7 @@ static void MX_LPUART1_UART_Init(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN USART2_Init 2 */
-//////////////
+////////////////
 //  /* USER CODE END USART2_Init 2 */
 //
 //}
@@ -430,13 +490,13 @@ static void MX_USART3_UART_Init(void)
 //{
 //
 //  /* USER CODE BEGIN RTC_Init 0 */
-////
+//////
 //  /* USER CODE END RTC_Init 0 */
 //
 //  RTC_PrivilegeStateTypeDef privilegeState = {0};
 //
 //  /* USER CODE BEGIN RTC_Init 1 */
-////
+//////
 //  /* USER CODE END RTC_Init 1 */
 //
 //  /** Initialize RTC Only
@@ -464,7 +524,7 @@ static void MX_USART3_UART_Init(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN RTC_Init 2 */
-////
+//////
 //  /* USER CODE END RTC_Init 2 */
 //
 //}
@@ -485,13 +545,13 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED2_YELLOW_GPIO_Port, LED2_YELLOW_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED1_GREEN_GPIO_Port, LED1_GREEN_Pin, GPIO_PIN_RESET);
@@ -505,12 +565,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LED2_YELLOW_Pin */
-  GPIO_InitStruct.Pin = LED2_YELLOW_Pin;
+  /*Configure GPIO pin : PF4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED2_YELLOW_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LED1_GREEN_Pin */
   GPIO_InitStruct.Pin = LED1_GREEN_Pin;

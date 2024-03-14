@@ -32,6 +32,8 @@ Drivers/BSP/src/UART.o: ../Drivers/BSP/src/UART.c \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h \
+ ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth.h \
+ ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h \
@@ -72,6 +74,8 @@ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h:
+../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth.h:
+../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h:

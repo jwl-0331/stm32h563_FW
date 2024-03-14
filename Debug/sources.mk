@@ -25,6 +25,9 @@ SUBDIRS := \
 Core/App/src \
 Core/Src \
 Core/Startup \
+Drivers/BSP/LWIP_RAW/App \
+Drivers/BSP/LWIP_RAW/Target \
+Drivers/BSP/lan8742 \
 Drivers/BSP/src \
 Drivers/STM32H5xx_HAL_Driver/Src \
 Middlewares/Solvine/Utils/src \
@@ -32,5 +35,14 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
+Middlewares/Third_Party/LwIP/src/api \
+Middlewares/Third_Party/LwIP/src/apps/mqtt \
+Middlewares/Third_Party/LwIP/src/core \
+Middlewares/Third_Party/LwIP/src/core/ipv4 \
+Middlewares/Third_Party/LwIP/src/core/ipv6 \
+Middlewares/Third_Party/LwIP/src/netif \
+Middlewares/Third_Party/LwIP/src/netif/ppp \
+Middlewares/Third_Party/LwIP/src/netif/ppp/polarssl \
+Middlewares/Third_Party/LwIP/system/OS \
 Middlewares/Third_Party/lwrb/src \
 
