@@ -6,14 +6,20 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Drivers/BSP/LWIP_RAW/App/app_ethernet.c \
+../Drivers/BSP/LWIP_RAW/App/lwip.c \
+../Drivers/BSP/LWIP_RAW/App/tcp_client.c \
 ../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c 
 
 OBJS += \
 ./Drivers/BSP/LWIP_RAW/App/app_ethernet.o \
+./Drivers/BSP/LWIP_RAW/App/lwip.o \
+./Drivers/BSP/LWIP_RAW/App/tcp_client.o \
 ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.o 
 
 C_DEPS += \
 ./Drivers/BSP/LWIP_RAW/App/app_ethernet.d \
+./Drivers/BSP/LWIP_RAW/App/lwip.d \
+./Drivers/BSP/LWIP_RAW/App/tcp_client.d \
 ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.d 
 
 
@@ -24,7 +30,7 @@ Drivers/BSP/LWIP_RAW/App/%.o Drivers/BSP/LWIP_RAW/App/%.su Drivers/BSP/LWIP_RAW/
 clean: clean-Drivers-2f-BSP-2f-LWIP_RAW-2f-App
 
 clean-Drivers-2f-BSP-2f-LWIP_RAW-2f-App:
-	-$(RM) ./Drivers/BSP/LWIP_RAW/App/app_ethernet.cyclo ./Drivers/BSP/LWIP_RAW/App/app_ethernet.d ./Drivers/BSP/LWIP_RAW/App/app_ethernet.o ./Drivers/BSP/LWIP_RAW/App/app_ethernet.su ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.cyclo ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.d ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.o ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.su
+	-$(RM) ./Drivers/BSP/LWIP_RAW/App/app_ethernet.cyclo ./Drivers/BSP/LWIP_RAW/App/app_ethernet.d ./Drivers/BSP/LWIP_RAW/App/app_ethernet.o ./Drivers/BSP/LWIP_RAW/App/app_ethernet.su ./Drivers/BSP/LWIP_RAW/App/lwip.cyclo ./Drivers/BSP/LWIP_RAW/App/lwip.d ./Drivers/BSP/LWIP_RAW/App/lwip.o ./Drivers/BSP/LWIP_RAW/App/lwip.su ./Drivers/BSP/LWIP_RAW/App/tcp_client.cyclo ./Drivers/BSP/LWIP_RAW/App/tcp_client.d ./Drivers/BSP/LWIP_RAW/App/tcp_client.o ./Drivers/BSP/LWIP_RAW/App/tcp_client.su ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.cyclo ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.d ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.o ./Drivers/BSP/LWIP_RAW/App/tcp_echoserver.su
 
 .PHONY: clean-Drivers-2f-BSP-2f-LWIP_RAW-2f-App
 

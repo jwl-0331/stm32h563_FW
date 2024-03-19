@@ -29,7 +29,8 @@
  */
 #ifndef __TCP_ECHOSERVER_H__
 #define __TCP_ECHOSERVER_H__
+#include "BSPConfig.h"
 
-void tcp_echoserver_init(void);
+void tcp_echoserver_init(uint8_t port);
 
 #endif /* __TCP_ECHOSERVER */

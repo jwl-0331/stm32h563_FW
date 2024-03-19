@@ -33,11 +33,15 @@
  **/
 
  /* This file was modified by ST */
-
+#include "main.h"
 #include "tcp_echoserver.h"
 #include "lwip/debug.h"
 #include "lwip/stats.h"
 #include "lwip/tcp.h"
+
+#include "svCLI.h"
+#include "svDebug.h"
+#include "LED.h"
 
 #if LWIP_TCP
 
@@ -77,7 +81,7 @@ static void tcp_echoserver_connection_close(struct tcp_pcb *tpcb, struct tcp_ech
   * @param  None
   * @retval None
   */
-void tcp_echoserver_init(void)
+void tcp_echoserver_init(uint8_t port)
 {
   /* create new tcp pcb */
   tcp_echoserver_pcb = tcp_new();
@@ -87,7 +91,7 @@ void tcp_echoserver_init(void)
     err_t err;
     
     /* bind echo_pcb to port 7 (ECHO protocol) */
-    err = tcp_bind(tcp_echoserver_pcb, IP_ADDR_ANY, 7);
+    err = tcp_bind(tcp_echoserver_pcb, IP_ADDR_ANY, port);
     
     if (err == ERR_OK)
     {
@@ -208,6 +212,7 @@ static err_t tcp_echoserver_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p
   }
   else if(es->state == ES_ACCEPTED)
   {
+
     /* first data chunk in p->payload */
     es->state = ES_RECEIVED;
     
@@ -224,6 +229,7 @@ static err_t tcp_echoserver_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p
   }
   else if (es->state == ES_RECEIVED)
   {
+
     /* more data received from client and previous data has been already sent*/
     if(es->p == NULL)
     {
@@ -439,4 +445,4 @@ static void tcp_echoserver_connection_close(struct tcp_pcb *tpcb, struct tcp_ech
   tcp_close(tpcb);
 }
 
-#endif /* LWIP_TCP */
+#endif

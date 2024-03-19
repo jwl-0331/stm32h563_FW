@@ -22,6 +22,7 @@
 #include "stm32h5xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -190,7 +191,6 @@ void TIM6_IRQHandler(void)
 
   /* USER CODE END TIM6_IRQn 1 */
 }
-
 /**
   * @brief This function handles USART2 global interrupt.
   */

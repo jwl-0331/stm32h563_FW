@@ -535,6 +535,8 @@ void ethernet_link_check_state(struct netif *netif)
     }
   }
 }
+
+
 void HAL_ETH_RxAllocateCallback(uint8_t **buff)
 {
   struct pbuf_custom *p = LWIP_MEMPOOL_ALLOC(RX_POOL);

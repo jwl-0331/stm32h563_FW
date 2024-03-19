@@ -23,7 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "BSPConfig.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,7 +58,8 @@ UART_HandleTypeDef huart3;
 extern RTC_HandleTypeDef hrtc;
 
 /* USER CODE BEGIN PV */
-
+BOOL timeFlag = FALSE;
+uint32_t timeCounter = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -621,7 +622,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+  timeCounter++;
 
+  if(timeCounter > 1000)
+  {
+    timeFlag = TRUE;
+    timeCounter = 0;
+  }
   /* USER CODE END Callback 1 */
 }
 

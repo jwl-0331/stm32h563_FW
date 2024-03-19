@@ -12,6 +12,6 @@
 ../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:460:9:ETH_PHY_IO_WriteReg	2
 ../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:474:9:ETH_PHY_IO_GetTick	1
 ../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:483:6:ethernet_link_check_state	10
-../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:538:6:HAL_ETH_RxAllocateCallback	2
-../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:558:6:HAL_ETH_RxLinkCallback	3
-../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:593:6:HAL_ETH_TxFreeCallback	1
+../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:540:6:HAL_ETH_RxAllocateCallback	2
+../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:560:6:HAL_ETH_RxLinkCallback	3
+../Drivers/BSP/LWIP_RAW/Target/ethernetif.c:595:6:HAL_ETH_TxFreeCallback	1
