@@ -81,6 +81,8 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/ethernetif.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP_RAW/App/app_ethernet.h \
  C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h \
@@ -182,6 +184,8 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/sys_arch.h
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/ethernetif.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP_RAW/App/app_ethernet.h:
 C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h:

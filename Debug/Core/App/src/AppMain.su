@@ -1,4 +1,5 @@
-../Core/App/src/AppMain.c:53:6:ethernetif_notify_conn_changed	16	static
-../Core/App/src/AppMain.c:70:6:AppMain	16	static,ignoring_inline_asm
-../Core/App/src/AppMain.c:224:6:TaskMain	16	static
-../Core/App/src/AppMain.c:229:6:HAL_GPIO_EXTI_Rising_Callback	16	static
+../Core/App/src/AppMain.c:54:6:ethernetif_notify_conn_changed	16	static
+../Core/App/src/AppMain.c:71:6:AppMain	16	static,ignoring_inline_asm
+../Core/App/src/AppMain.c:223:6:TaskMain	16	static
+../Core/App/src/AppMain.c:236:6:StartEchoTask	48	static
+../Core/App/src/AppMain.c:289:6:HAL_GPIO_EXTI_Rising_Callback	16	static

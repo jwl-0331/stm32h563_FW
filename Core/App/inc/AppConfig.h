@@ -37,6 +37,7 @@ extern osThreadId_t echoTaskHandle;
 
 
 void TaskMain(void* argument);
+void StartEchoTask(void const *argument);
 
 typedef enum
 {
@@ -61,6 +62,5 @@ struct time_packet
   uint8_t dummy[5];
 };
 
-/* TCP ECHO */
 
 #endif /* APP_INC_APPCONFIG_H_ */

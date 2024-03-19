@@ -7,6 +7,7 @@
 #include "main.h"
 #include "BSPConfig.h"
 #include "lwip.h"
+#include "lwip/api.h"
 #include "app_ethernet.h"
 #include "AppConfig.h"
 //#include "tcp_echoserver.h"
@@ -81,19 +82,17 @@ void AppMain()
   CAN_Init();
   CAN_Open(_DEF_CAN1, CAN_NORMAL, CAN_CLASSIC, CAN_1M, CAN_2M);
 
-  /* Init scheduler */
-  osKernelInitialize();
-
   //MX_LWIP_Init();
   /* NO RTOS */
   //app_echoserver_init();
 
   //ethernetif_notify_conn_changed(&gnetif);
 
-
   // Chk Reset Count
   //uint32_t pre_time = HAL_GetTick();
   DebugMsg(DEBUGMSG_APP, "\r\n<< svCLI TEST : >>\r\n");
+  /* Init scheduler */
+  osKernelInitialize();
 
   g_hTaskMain = osThreadNew(TaskMain, NULL, &TaskMain_attributes);
 
@@ -223,7 +222,68 @@ void AppMain()
 
 void TaskMain(void* argument)
 {
+  MX_LWIP_Init();
   LED_OnOff(LED3_RED, TRUE);
+
+  echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
+  for(;;)
+  {
+    svDebugProcess();
+  }
+
+}
+
+void StartEchoTask(void const *argument)
+{
+  /* Netconn API */
+  struct netconn *conn, *newconn;
+  err_t err, accept_err;
+  struct netbuf *buf;
+  void *data;
+  u16_t len;
+
+  LWIP_UNUSED_ARG(argument);
+
+  conn = netconn_new(NETCONN_TCP); //new tcp netconn , create new connection
+
+  if (conn != NULL)
+  {
+    err = netconn_bind(conn, NULL, 7); //bind to port 7
+
+    if (err == ERR_OK)
+    {
+      netconn_listen(conn); //listen at port 7
+
+      while (1)
+      {
+        accept_err = netconn_accept(conn, &newconn); //accept new connection
+
+        if (accept_err == ERR_OK) //accept ok
+        {
+          while (netconn_recv(newconn, &buf) == ERR_OK) //receive data
+          {
+            do
+            {
+              netbuf_data(buf, &data, &len); //receive data pointer & length  buf -> data
+              netconn_write(newconn, data, len, NETCONN_COPY); //echo back to the client
+
+              HAL_GPIO_TogglePin(LED2_YELLOW_GPIO_Port, LED2_YELLOW_Pin); //toggle data led
+            }
+            while (netbuf_next(buf) >= 0); //check buffer empty
+
+            netbuf_delete(buf); //clear buffer
+          }
+
+          netconn_close(newconn); //close session
+          netconn_delete(newconn); //free memory
+        }
+      }
+    }
+    else
+    {
+      netconn_delete(newconn); //free memory
+    }
+  }
 }
 
 void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
