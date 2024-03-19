@@ -1,2 +1,0 @@
-../Drivers/BSP/LWIP_RAW/App/app_ethernet.c:52:6:ethernet_link_status_updated	2
-../Drivers/BSP/LWIP_RAW/App/app_ethernet.c:82:6:Ethernet_Link_Periodic_Handle	2

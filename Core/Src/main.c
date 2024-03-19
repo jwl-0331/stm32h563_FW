@@ -60,11 +60,19 @@ extern RTC_HandleTypeDef hrtc;
 /* USER CODE BEGIN PV */
 BOOL timeFlag = FALSE;
 uint32_t timeCounter = 0;
+
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 256 * 4
+};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void MX_FREERTOS_Init(void);
+void StartDefaultTask(void *argument);
 static void MX_GPIO_Init(void);
 static void MX_FLASH_Init(void);
 static void MX_ICACHE_Init(void);
@@ -122,7 +130,20 @@ int main(void)
   //MX_ETH_Init();
   /* USER CODE BEGIN 2 */
 
+#if 0
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* Call init function for freertos objects (in freertos.c) */
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* Start scheduler */
+  osKernelStart();
+#endif
+
+#if 1
   AppMain();
+#endif
   /* USER CODE END 2 */
 
   /* We should never get here as control is now taken by the scheduler */
@@ -603,6 +624,23 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END 5 */
+}
 /* USER CODE END 4 */
 
 /**

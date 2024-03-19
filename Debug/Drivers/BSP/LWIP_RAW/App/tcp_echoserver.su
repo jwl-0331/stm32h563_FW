@@ -1,8 +1,0 @@
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:63:7:app_echoserver_init	16	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:103:14:app_callback_accepted	32	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:144:14:app_callback_received	40	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:222:13:app_callback_error	24	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:243:14:app_callback_poll	24	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:277:14:app_callback_sent	32	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:308:13:app_send_data	32	static
-../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.c:356:13:app_close_connection	16	static

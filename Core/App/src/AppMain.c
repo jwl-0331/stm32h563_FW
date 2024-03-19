@@ -8,8 +8,9 @@
 #include "BSPConfig.h"
 #include "lwip.h"
 #include "app_ethernet.h"
-#include "tcp_echoserver.h"
-#include "tcp_client.h"
+#include "AppConfig.h"
+//#include "tcp_echoserver.h"
+//#include "tcp_client.h"
 
 #include "LED.h"
 #include "UART.h"
@@ -26,8 +27,28 @@
 #include "svDebug.h"
 #include "svRingBuffer.h"
 
-struct netif gnetif;
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+extern struct netif gnetif;
 extern BOOL timeFlag;
+extern UART_HandleTypeDef huart2;
+/*RTOS - ECHO SERVER*/
+
+osThreadId_t g_hTaskMain;
+const osThreadAttr_t TaskMain_attributes = {
+  .name = "TaskMain",
+  .priority = (osPriority_t) TASK_PRIORITY_MAIN,
+  .stack_size = STACK_SIZE_MAIN*4
+};
+osThreadId_t echoTaskHandle; // echo server task handle
+const osThreadAttr_t echoTask_attributes = {
+  .name = "echoTask",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = STACK_SIZE_TCP
+};
 
 void ethernetif_notify_conn_changed(struct netif *netif)
 {
@@ -60,43 +81,45 @@ void AppMain()
   CAN_Init();
   CAN_Open(_DEF_CAN1, CAN_NORMAL, CAN_CLASSIC, CAN_1M, CAN_2M);
 
-  MX_LWIP_Init();
-  app_echoserver_init();
+  /* Init scheduler */
+  osKernelInitialize();
 
-  /* USER CODE BEGIN 2 */
-  ethernetif_notify_conn_changed(&gnetif);
+  //MX_LWIP_Init();
+  /* NO RTOS */
+  //app_echoserver_init();
+
+  //ethernetif_notify_conn_changed(&gnetif);
 
 
   // Chk Reset Count
   //uint32_t pre_time = HAL_GetTick();
   DebugMsg(DEBUGMSG_APP, "\r\n<< svCLI TEST : >>\r\n");
 
-  /* RTOS */
-  /* Init scheduler */
-  //osKernelInitialize();
+  g_hTaskMain = osThreadNew(TaskMain, NULL, &TaskMain_attributes);
 
-  /* Call init function for freertos objects (in freertos.c) */
-  //MX_FREERTOS_Init();
-
-  /* Start scheduler */
-  //osKernelStart();
+  osKernelStart();
+  /*With out RTOS */
   while(1)
   {
     /* End OF ECHO SERVER  */
 
 
     svDebugProcess();
-    MX_LWIP_Process();
+    //MX_LWIP_Process();
 
 
+
+    /* NO RTOS */
     /*tcp_client module */
+    /*
     if(timeFlag)
     {
       timeFlag = FALSE;
       app_start_get_time(); //get time information from the server
     }
-
+    */
     /*tcp_echoserver */
+    /*
 #if LWIP_NETIF_LINK_CALLBACK
     Ethernet_Link_Periodic_Handle(&gnetif);
 #endif
@@ -104,6 +127,8 @@ void AppMain()
 #if LWIP_DHCP
     DHCP_Periodic_Handle(&gnetif);
 #endif
+*/
+
     /* RESET TEST */
     /*
     if(HAL_GetTick() - pre_time >= 500)
@@ -194,6 +219,11 @@ void AppMain()
     }
     */
   }
+}
+
+void TaskMain(void* argument)
+{
+  LED_OnOff(LED3_RED, TRUE);
 }
 
 void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)

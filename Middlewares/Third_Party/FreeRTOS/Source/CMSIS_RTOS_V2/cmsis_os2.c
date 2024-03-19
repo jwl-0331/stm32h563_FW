@@ -172,7 +172,6 @@ void SysTick_Handler (void) {
     /* Call tick handler */
     xPortSysTickHandler();
   }
-
 }
 #endif
 #endif /* SysTick */

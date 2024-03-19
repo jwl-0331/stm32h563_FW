@@ -1,9 +1,0 @@
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:35:6:app_start_get_time	1
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:44:13:app_open_conn	4
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:72:14:tcp_callback_connected	2
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:98:13:app_send_data	1
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:120:14:tcp_callback_sent	3
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:149:14:tcp_callback_received	6
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:200:13:app_close_conn	1
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:217:13:tcp_callback_error	1
-../Drivers/BSP/LWIP_RAW/App/tcp_client.c:229:14:tcp_callback_poll	1

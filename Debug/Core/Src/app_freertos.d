@@ -43,7 +43,55 @@ Core/Src/app_freertos.o: ../Core/Src/app_freertos.c \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h \
- ../Middlewares/Third_Party/CMSIS/RTOS2/Include/cmsis_os2.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/App/lwip.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/lwipopts.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/arch.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cc.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cpu.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/mem.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/memp.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_std.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_priv.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/mem_priv.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/stats.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/netif/etharp.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/etharp.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/err.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip4_addr.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/def.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netif.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip_addr.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip6_addr.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/def.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip4.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip4.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/ethernet.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/ieee.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/etharp.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/sys.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/sys_arch.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/ethernetif.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/printf.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -89,4 +137,52 @@ Core/Src/app_freertos.o: ../Core/Src/app_freertos.c \
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h:
-../Middlewares/Third_Party/CMSIS/RTOS2/Include/cmsis_os2.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/App/lwip.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/lwipopts.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cc.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cpu.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/mem.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/memp.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_std.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_priv.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/mem_priv.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/stats.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/netif/etharp.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/etharp.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/err.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip4_addr.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/def.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netif.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip_addr.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip6_addr.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/def.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ip4.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip4.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/ethernet.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/ieee.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/etharp.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/sys_arch.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/ethernetif.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/printf.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h:

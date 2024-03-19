@@ -27,7 +27,8 @@
 #endif /* MDK ARM Compiler */
 #include "ethernetif.h"
 /* USER CODE BEGIN 0 */
-
+#include "cmsis_os2.h"
+#include "string.h"
 /* USER CODE END 0 */
 /* Private function prototypes -----------------------------------------------*/
 static void ethernet_link_status_updated(struct netif *netif);
@@ -77,19 +78,14 @@ void MX_LWIP_Init(void)
 /* USER CODE END IP_ADDRESSES */
 
   /* Initilialize the LwIP stack with RTOS */
-  //tcpip_init( NULL, NULL );
-  /* Initilialize the LwIP stack without RTOS */
-  lwip_init();
+  tcpip_init( NULL, NULL );
+
   /* IP addresses initialization without DHCP (IPv4) */
   IP4_ADDR(&ipaddr, IP_ADDRESS[0], IP_ADDRESS[1], IP_ADDRESS[2], IP_ADDRESS[3]);
   IP4_ADDR(&netmask, NETMASK_ADDRESS[0], NETMASK_ADDRESS[1] , NETMASK_ADDRESS[2], NETMASK_ADDRESS[3]);
   IP4_ADDR(&gw, GATEWAY_ADDRESS[0], GATEWAY_ADDRESS[1], GATEWAY_ADDRESS[2], GATEWAY_ADDRESS[3]);
 
-  /* add the network interface (IPv4/IPv6) with RTOS */
-  //netif_add(&gnetif, &ipaddr, &netmask, &gw, NULL, &ethernetif_init, &tcpip_input);
-
-  /* add the network interface (IPv4/IPv6) without RTOS */
-  netif_add(&gnetif, &ipaddr, &netmask, &gw, NULL, &ethernetif_init, &ethernet_input);
+  netif_add(&gnetif, &ipaddr, &netmask, &gw, NULL, &ethernetif_init, &tcpip_input);
 
   /* Registers the default network interface */
   netif_set_default(&gnetif);
@@ -110,13 +106,11 @@ void MX_LWIP_Init(void)
 
   /* Create the Ethernet link handler thread */
   /* USER CODE BEGIN H7_OS_THREAD_NEW_CMSIS_RTOS_V2 */
-  /*
-    memset(&attributes, 0x0, sizeof(osThreadAttr_t));
-    attributes.name = "EthLink";
-    attributes.stack_size = INTERFACE_THREAD_STACK_SIZE;
-    attributes.priority = osPriorityBelowNormal;
-    osThreadNew(ethernet_link_thread, &gnetif, &attributes);
-    */
+  memset(&attributes, 0x0, sizeof(osThreadAttr_t));
+  attributes.name = "EthLink";
+  attributes.stack_size = INTERFACE_THREAD_STACK_SIZE;
+  attributes.priority = osPriorityBelowNormal;
+  osThreadNew(ethernet_link_thread, &gnetif, &attributes);
   /* USER CODE END H7_OS_THREAD_NEW_CMSIS_RTOS_V2 */
 
 /* USER CODE BEGIN 3 */
