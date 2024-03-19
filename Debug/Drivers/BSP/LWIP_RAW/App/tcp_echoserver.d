@@ -35,7 +35,6 @@ Drivers/BSP/LWIP_RAW/App/tcp_echoserver.o: \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h \
  ../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/arch.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cc.h \
@@ -66,6 +65,7 @@ Drivers/BSP/LWIP_RAW/App/tcp_echoserver.o: \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h \
@@ -107,7 +107,6 @@ Drivers/BSP/LWIP_RAW/App/tcp_echoserver.o: \
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h:
 ../Drivers/BSP/LWIP_RAW/App/tcp_echoserver.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cc.h:
@@ -138,6 +137,7 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h:

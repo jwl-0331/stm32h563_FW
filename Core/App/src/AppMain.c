@@ -60,10 +60,8 @@ void AppMain()
   CAN_Init();
   CAN_Open(_DEF_CAN1, CAN_NORMAL, CAN_CLASSIC, CAN_1M, CAN_2M);
 
-
-  //lwip_init();
   MX_LWIP_Init();
-  //tcp_echoserver_init(7);
+  app_echoserver_init();
 
   /* USER CODE BEGIN 2 */
   ethernetif_notify_conn_changed(&gnetif);
@@ -84,32 +82,28 @@ void AppMain()
   //osKernelStart();
   while(1)
   {
-    /*TCP ECHO SERVER */
-    /* Read a received packet from the Ethernet buffers and send it
-       to the lwIP for handling */
-    //ethernetif_input(&gnetif);
-
-    /* Handle timeouts */
-    //sys_check_timeouts();
-
-#if LWIP_NETIF_LINK_CALLBACK
-    //Ethernet_Link_Periodic_Handle(&gnetif);
-#endif
-
-#if LWIP_DHCP
-    DHCP_Periodic_Handle(&gnetif);
-#endif
     /* End OF ECHO SERVER  */
 
 
     svDebugProcess();
     MX_LWIP_Process();
 
+
+    /*tcp_client module */
     if(timeFlag)
     {
       timeFlag = FALSE;
       app_start_get_time(); //get time information from the server
     }
+
+    /*tcp_echoserver */
+#if LWIP_NETIF_LINK_CALLBACK
+    Ethernet_Link_Periodic_Handle(&gnetif);
+#endif
+
+#if LWIP_DHCP
+    DHCP_Periodic_Handle(&gnetif);
+#endif
     /* RESET TEST */
     /*
     if(HAL_GetTick() - pre_time >= 500)

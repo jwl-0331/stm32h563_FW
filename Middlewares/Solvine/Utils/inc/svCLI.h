@@ -9,6 +9,7 @@
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __SVCLI_H__
 #define __SVCLI_H__
+#include "BSPConfig.h"
 
 #define USE_CLI_FUNCTIONS			// for image size
 
