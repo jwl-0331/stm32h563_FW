@@ -27,8 +27,7 @@
 #endif /* MDK ARM Compiler */
 #include "ethernetif.h"
 /* USER CODE BEGIN 0 */
-#include "cmsis_os2.h"
-#include "string.h"
+
 /* USER CODE END 0 */
 /* Private function prototypes -----------------------------------------------*/
 static void ethernet_link_status_updated(struct netif *netif);

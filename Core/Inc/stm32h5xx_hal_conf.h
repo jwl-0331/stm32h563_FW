@@ -262,7 +262,6 @@
 #define ETH_MAC_ADDR4    ((uint8_t)0x00)
 #define ETH_MAC_ADDR5    ((uint8_t)0x00)
 
-
 /* ############################################ SPI peripheral configuration ######################################## */
 
 /* CRC FEATURE: Use to activate CRC feature inside HAL SPI Driver

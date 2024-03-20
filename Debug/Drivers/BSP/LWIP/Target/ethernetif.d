@@ -80,8 +80,7 @@ Drivers/BSP/LWIP/Target/ethernetif.o: \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ethip6.h \
  ../Drivers/BSP/LWIP/Target/ethernetif.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/lan8742/lan8742.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
- ../Drivers/BSP/LWIP/Target/lwipopts.h
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
 ../Core/Inc/stm32h5xx_hal_conf.h:
@@ -164,4 +163,3 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/ethip
 ../Drivers/BSP/LWIP/Target/ethernetif.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/lan8742/lan8742.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
-../Drivers/BSP/LWIP/Target/lwipopts.h:

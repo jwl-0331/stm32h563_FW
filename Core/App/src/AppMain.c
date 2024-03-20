@@ -36,20 +36,32 @@
 extern struct netif gnetif;
 extern BOOL timeFlag;
 extern UART_HandleTypeDef huart2;
-/*RTOS - ECHO SERVER*/
 
+/*RTOS - ECHO SERVER*/
 osThreadId_t g_hTaskMain;
 const osThreadAttr_t TaskMain_attributes = {
   .name = "TaskMain",
-  .priority = (osPriority_t) TASK_PRIORITY_MAIN,
-  .stack_size = STACK_SIZE_MAIN*4
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 1024 * 4
 };
 osThreadId_t echoTaskHandle; // echo server task handle
 const osThreadAttr_t echoTask_attributes = {
   .name = "echoTask",
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = STACK_SIZE_TCP
+  .stack_size = configMINIMAL_STACK_SIZE * 4
 };
+
+/* RTOS - Tcp Client */
+extern struct netif gnetif; //extern gnetif
+osThreadId_t tcpClientTaskHandle;  //tcp client task handle
+const osThreadAttr_t tcpClientTask_attributes = {
+  .name = "tcpClientTask",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = configMINIMAL_STACK_SIZE * 4
+};
+
+ip_addr_t server_addr; //server address
+struct time_packet packet; //256 bytes time_packet structure
 
 void ethernetif_notify_conn_changed(struct netif *netif)
 {
@@ -223,12 +235,14 @@ void AppMain()
 void TaskMain(void* argument)
 {
   MX_LWIP_Init();
-  LED_OnOff(LED3_RED, TRUE);
 
   echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
+  tcpClientTaskHandle = osThreadNew(StartTcpClientTask, NULL, &tcpClientTask_attributes);
   for(;;)
   {
     svDebugProcess();
+    HAL_GPIO_TogglePin(LED1_GREEN_GPIO_Port, LED1_GREEN_Pin); //toggle running led
+    osDelay(500);
   }
 
 }
@@ -286,6 +300,111 @@ void StartEchoTask(void const *argument)
   }
 }
 
+void StartTcpClientTask(void const *argument)
+{
+  err_t err;
+  struct netconn *conn;
+  struct netbuf *buf;
+  void *data;
+
+  u16_t len; //buffer length
+  u16_t nRead; //read buffer index
+  u16_t nWritten; //write buffer index
+
+  LWIP_UNUSED_ARG(argument);
+
+  while (1)
+  {
+    if (gnetif.ip_addr.addr == 0 || gnetif.netmask.addr == 0 || gnetif.gw.addr == 0) //system has no valid ip address
+    {
+      osDelay(1000);
+      continue;
+    }
+    else //valid ip address
+    {
+      osDelay(100); //request interval
+    }
+
+    nRead = 0; //clear indexes
+    nWritten = 0;
+
+    conn = netconn_new(NETCONN_TCP); //new tcp netconn
+
+    if (conn != NULL)
+    {
+      IP4_ADDR(&server_addr, SERVER_IP1, SERVER_IP2, SERVER_IP3, SERVER_IP4); //server ip
+      err = netconn_connect(conn, &server_addr, SERVER_PORT); //connect to the server
+
+      if (err != ERR_OK)
+      {
+        netconn_delete(conn); //free memory
+        continue;
+      }
+
+      memset(&packet, 0, sizeof(struct time_packet));
+      /*
+      packet.head = 0xAE; //head
+      packet.type = REQ; //request typ
+      packet.year = 2024;
+      packet.month = 03;
+      packet.day = 06;
+      packet.hour = 17;
+      packet.minute = 30;
+      packet.second = 0;
+      packet.dummy[0] = 11;
+      packet.tail = 0xEA; //tail
+      */
+      packet.dummy[0] = 'H';
+      packet.dummy[1] = 'E';
+      packet.dummy[2] = 'L';
+      packet.dummy[3] = 'L';
+      packet.dummy[4] = 'O';
+
+      do
+      {
+        if (netconn_write_partly(
+            conn, //connection
+            (const void*) (&packet + nWritten), //buffer pointer
+            (sizeof(struct time_packet) - nWritten), //buffer length
+            NETCONN_NOFLAG, //no copy
+            (size_t*) &len) != ERR_OK) //written len
+        {
+          netconn_close(conn); //close session
+          netconn_delete(conn); //free memory
+          continue;
+        }
+        else
+        {
+          nWritten += len;  // write buffer index++
+        }
+      }
+      while (nWritten < sizeof(struct time_packet)); //send request
+
+      while (netconn_recv(conn, &buf) == ERR_OK) //receive the response
+      {
+        do
+        {
+          netbuf_data(buf, &data, &len); //receive data pointer & length
+
+          memcpy(&packet + nRead, data, len);
+          nRead += len;
+        }
+        while (netbuf_next(buf) >= 0); //check buffer empty
+        netbuf_delete(buf); //clear buffer
+      }
+
+      if (nRead == sizeof(struct time_packet) )//&& packet.type == RESP) //if received length is valid
+      {
+        //printf("%04d-%02d-%02d %02d:%02d:%02d\n", packet.year + 2000, packet.month, packet.day, packet.hour, packet.minute, packet.second); //print time information
+        HAL_GPIO_TogglePin(LED2_YELLOW_GPIO_Port, LED2_YELLOW_Pin); //toggle data led
+      }
+
+      netconn_close(conn); //close session
+      netconn_delete(conn); //free memory
+    }
+  }
+}
+
 void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
 {
   if(GPIO_Pin == USER_BUTTON_Pin)
@@ -294,3 +413,8 @@ void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
   }
 }
 
+/* FOR Printf  */
+void _putchar(char character)
+{
+  HAL_UART_Transmit(&huart2, (const unsigned char*)&character, 1, 1000);
+}

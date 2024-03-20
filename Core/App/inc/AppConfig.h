@@ -10,6 +10,7 @@
 
 #include "cmsis_os.h"
 
+/*
 // Task Priority
 #define TASK_PRIORITY_MAIN                  osPriorityNormal
 //#define TASK_PRIORITY_MQTT                  osPriorityNormal
@@ -25,6 +26,7 @@
 #define STACK_SIZE_IDLE_TASK                configMINIMAL_STACK_SIZE      // 256
 #define STACK_SIZE_RTOS_DAEMON_TASK         configTIMER_TASK_STACK_DEPTH  // 1024
 
+*/
 #define SERVER_IP1  192 //server ip address
 #define SERVER_IP2  168
 #define SERVER_IP3  219
@@ -34,10 +36,12 @@
 
 extern osThreadId_t g_hTaskMain;
 extern osThreadId_t echoTaskHandle;
-
+extern osThreadId_t tcpClientTaskHandle;
 
 void TaskMain(void* argument);
-void StartEchoTask(void const *argument);
+void StartEchoTask(void const *argument);  //echo server task function
+void StartTcpClientTask(void const *argument); //tcp client task function
+
 
 typedef enum
 {

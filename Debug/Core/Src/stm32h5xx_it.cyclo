@@ -6,4 +6,6 @@
 ../Core/Src/stm32h5xx_it.c:148:6:DebugMon_Handler	1
 ../Core/Src/stm32h5xx_it.c:168:6:EXTI13_IRQHandler	1
 ../Core/Src/stm32h5xx_it.c:184:6:TIM6_IRQHandler	1
-../Core/Src/stm32h5xx_it.c:197:6:USART2_IRQHandler	1
+../Core/Src/stm32h5xx_it.c:198:6:ETH_IRQHandler	1
+../Core/Src/stm32h5xx_it.c:212:6:ETH_WKUP_IRQHandler	1
+../Core/Src/stm32h5xx_it.c:225:6:USART2_IRQHandler	1
