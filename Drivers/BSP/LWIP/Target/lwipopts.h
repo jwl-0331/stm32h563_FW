@@ -94,7 +94,7 @@
 /*----- Value in opt.h for RECV_BUFSIZE_DEFAULT: INT_MAX -----*/
 #define RECV_BUFSIZE_DEFAULT 2000000000
 /*----- Value in opt.h for LWIP_STATS: 1 -----*/
-#define LWIP_STATS 0
+#define LWIP_STATS 1
 /*----- Value in opt.h for CHECKSUM_GEN_IP: 1 -----*/
 #define CHECKSUM_GEN_IP 0
 /*----- Value in opt.h for CHECKSUM_GEN_UDP: 1 -----*/
@@ -111,9 +111,16 @@
 #define CHECKSUM_CHECK_TCP 0
 /*----- Value in opt.h for CHECKSUM_CHECK_ICMP6: 1 -----*/
 #define CHECKSUM_CHECK_ICMP6 0
+
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
-
+#define LWIP_DEBUG 1
+#define NETIF_DEBUG LWIP_DBG_ON
+#define DHCP_DEBUG LWIP_DBG_ON
+#define UDP_DEBUG  LWIP_DBG_ON
+#define MEMP_DEBUG LWIP_DBG_ON
+#define MEM_DEBUG LWIP_DBG_ON
+#define ICMP_DEBUG LWIP_DBG_ON
 /* USER CODE END 1 */
 
 #ifdef __cplusplus

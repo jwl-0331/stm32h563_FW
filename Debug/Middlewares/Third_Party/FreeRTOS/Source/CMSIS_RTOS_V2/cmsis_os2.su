@@ -80,5 +80,8 @@
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2820:14:CreateBlock	24	static
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2837:14:AllocBlock	24	static
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2854:13:FreeBlock	24	static
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2889:13:vApplicationMallocFailedHook	8	static
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2899:13:vApplicationDaemonTaskStartupHook	4	static
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2906:13:vApplicationStackOverflowHook	16	static
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2921:13:vApplicationGetIdleTaskMemory	24	static
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:2935:13:vApplicationGetTimerTaskMemory	24	static

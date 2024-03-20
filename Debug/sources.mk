@@ -44,5 +44,7 @@ Middlewares/Third_Party/LwIP/src/netif \
 Middlewares/Third_Party/LwIP/src/netif/ppp \
 Middlewares/Third_Party/LwIP/src/netif/ppp/polarssl \
 Middlewares/Third_Party/LwIP/system/OS \
+Middlewares/Third_Party/MQTT \
+Middlewares/Third_Party/MQTT/MQTTPacket \
 Middlewares/Third_Party/lwrb/src \
 

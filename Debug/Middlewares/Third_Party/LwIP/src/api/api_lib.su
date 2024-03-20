@@ -9,7 +9,7 @@
 ../Middlewares/Third_Party/LwIP/src/api/api_lib.c:409:1:netconn_disconnect	56	static
 ../Middlewares/Third_Party/LwIP/src/api/api_lib.c:434:1:netconn_listen_with_backlog	56	static
 ../Middlewares/Third_Party/LwIP/src/api/api_lib.c:471:1:netconn_accept	32	static
-../Middlewares/Third_Party/LwIP/src/api/api_lib.c:579:1:netconn_recv_data	40	static
+../Middlewares/Third_Party/LwIP/src/api/api_lib.c:579:1:netconn_recv_data	48	static
 ../Middlewares/Third_Party/LwIP/src/api/api_lib.c:677:1:netconn_tcp_recvd_msg	24	static
 ../Middlewares/Third_Party/LwIP/src/api/api_lib.c:689:1:netconn_tcp_recvd	56	static
 ../Middlewares/Third_Party/LwIP/src/api/api_lib.c:703:1:netconn_recv_data_tcp	72	static

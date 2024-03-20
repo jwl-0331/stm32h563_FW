@@ -8,9 +8,26 @@
 #ifndef APP_INC_APPCONFIG_H_
 #define APP_INC_APPCONFIG_H_
 
+#include "BSPConfig.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
 #include "cmsis_os.h"
 
-/*
+
+/* lwip */
+#include "lwip.h"
+#include "lwip/api.h"
+#include "app_ethernet.h"
+
+/* RAW API */
+//#include "tcp_echoserver.h"
+//#include "tcp_client.h"
+
+/* MQTT */
+#include "MQTTClient.h"
+#include "MQTTInterface.h"
+
 // Task Priority
 #define TASK_PRIORITY_MAIN                  osPriorityNormal
 //#define TASK_PRIORITY_MQTT                  osPriorityNormal
@@ -26,7 +43,7 @@
 #define STACK_SIZE_IDLE_TASK                configMINIMAL_STACK_SIZE      // 256
 #define STACK_SIZE_RTOS_DAEMON_TASK         configTIMER_TASK_STACK_DEPTH  // 1024
 
-*/
+
 #define SERVER_IP1  192 //server ip address
 #define SERVER_IP2  168
 #define SERVER_IP3  219

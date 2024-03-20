@@ -61,6 +61,8 @@ extern RTC_HandleTypeDef hrtc;
 BOOL timeFlag = FALSE;
 uint32_t timeCounter = 0;
 
+/* MQTT 타이머*/
+extern uint32_t MilliTimer;
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
@@ -89,6 +91,18 @@ extern void AppMain(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/* print 를 이용한 SWV 출력 */
+int _write(int file, char *ptr, int len)
+{
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++)
+  {
+    ITM_SendChar(*ptr++);
+  }
+  return len;
+}
+
 
 /* USER CODE END 0 */
 
@@ -129,7 +143,7 @@ int main(void)
   //MX_FDCAN1_Init();
   //MX_ETH_Init();
   /* USER CODE BEGIN 2 */
-
+  printf("Don't remove this printf to prevent hard fault.\r\n");
 #if 0
   /* Init scheduler */
   osKernelInitialize();
@@ -660,8 +674,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-  timeCounter++;
+  if (htim->Instance == TIM6) {
+      MilliTimer++;
+  }
 
+  timeCounter++;
   if(timeCounter > 1000)
   {
     timeFlag = TRUE;

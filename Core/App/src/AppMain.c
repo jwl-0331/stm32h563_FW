@@ -4,14 +4,7 @@
  *  Created on: Mar 12, 2024
  *      Author: mm940
  */
-#include "main.h"
-#include "BSPConfig.h"
-#include "lwip.h"
-#include "lwip/api.h"
-#include "app_ethernet.h"
 #include "AppConfig.h"
-//#include "tcp_echoserver.h"
-//#include "tcp_client.h"
 
 #include "LED.h"
 #include "UART.h"
@@ -33,7 +26,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-extern struct netif gnetif;
+extern struct netif gnetif;  //reside in lwip.c
 extern BOOL timeFlag;
 extern UART_HandleTypeDef huart2;
 
@@ -41,14 +34,14 @@ extern UART_HandleTypeDef huart2;
 osThreadId_t g_hTaskMain;
 const osThreadAttr_t TaskMain_attributes = {
   .name = "TaskMain",
-  .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 1024 * 4
+  .priority = (osPriority_t) TASK_PRIORITY_MAIN,
+  .stack_size = STACK_SIZE_MAIN*4
 };
 osThreadId_t echoTaskHandle; // echo server task handle
 const osThreadAttr_t echoTask_attributes = {
   .name = "echoTask",
-  .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = configMINIMAL_STACK_SIZE * 4
+  .priority = (osPriority_t) TASK_PRIORITY_TCP,
+  .stack_size = STACK_SIZE_TCP
 };
 
 /* RTOS - Tcp Client */
@@ -56,13 +49,28 @@ extern struct netif gnetif; //extern gnetif
 osThreadId_t tcpClientTaskHandle;  //tcp client task handle
 const osThreadAttr_t tcpClientTask_attributes = {
   .name = "tcpClientTask",
-  .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = configMINIMAL_STACK_SIZE * 4
+  .priority = (osPriority_t) TASK_PRIORITY_TCP,
+  .stack_size = STACK_SIZE_TCP
 };
 
 ip_addr_t server_addr; //server address
 struct time_packet packet; //256 bytes time_packet structure
 
+/* FOR LWIP DEBUG MSG */
+/*
+#ifdef __GNUC__
+
+  #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+  #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif
+PUTCHAR_PROTOTYPE
+{
+  HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+
+  return ch;
+}
+*/
 void ethernetif_notify_conn_changed(struct netif *netif)
 {
   /* NOTE : This is function could be implemented in user file
@@ -107,6 +115,8 @@ void AppMain()
   osKernelInitialize();
 
   g_hTaskMain = osThreadNew(TaskMain, NULL, &TaskMain_attributes);
+  echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
+  tcpClientTaskHandle = osThreadNew(StartTcpClientTask, NULL, &tcpClientTask_attributes);
 
   osKernelStart();
   /*With out RTOS */
@@ -236,8 +246,8 @@ void TaskMain(void* argument)
 {
   MX_LWIP_Init();
 
-  echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
-  tcpClientTaskHandle = osThreadNew(StartTcpClientTask, NULL, &tcpClientTask_attributes);
+  //echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
+  //tcpClientTaskHandle = osThreadNew(StartTcpClientTask, NULL, &tcpClientTask_attributes);
   for(;;)
   {
     svDebugProcess();
@@ -274,11 +284,13 @@ void StartEchoTask(void const *argument)
 
         if (accept_err == ERR_OK) //accept ok
         {
+          DebugMsg(DEBUGMSG_APP, "\r\nTCP Connected\r\n");
           while (netconn_recv(newconn, &buf) == ERR_OK) //receive data
           {
             do
             {
               netbuf_data(buf, &data, &len); //receive data pointer & length  buf -> data
+              DebugMsg(DEBUGMSG_APP, "\r\nMSG FROM Client: %s\r\n",data);
               netconn_write(newconn, data, len, NETCONN_COPY); //echo back to the client
 
               HAL_GPIO_TogglePin(LED2_YELLOW_GPIO_Port, LED2_YELLOW_Pin); //toggle data led

@@ -1,7 +1,7 @@
-../Core/App/src/AppMain.c:66:6:ethernetif_notify_conn_changed	16	static
-../Core/App/src/AppMain.c:83:6:AppMain	16	static,ignoring_inline_asm
-../Core/App/src/AppMain.c:235:6:TaskMain	16	static
-../Core/App/src/AppMain.c:250:6:StartEchoTask	48	static
-../Core/App/src/AppMain.c:303:6:StartTcpClientTask	48	static
-../Core/App/src/AppMain.c:408:6:HAL_GPIO_EXTI_Rising_Callback	16	static
-../Core/App/src/AppMain.c:417:6:_putchar	16	static
+../Core/App/src/AppMain.c:74:6:ethernetif_notify_conn_changed	16	static
+../Core/App/src/AppMain.c:91:6:AppMain	16	static,ignoring_inline_asm
+../Core/App/src/AppMain.c:245:6:TaskMain	16	static
+../Core/App/src/AppMain.c:260:6:StartEchoTask	48	static
+../Core/App/src/AppMain.c:315:6:StartTcpClientTask	48	static
+../Core/App/src/AppMain.c:420:6:HAL_GPIO_EXTI_Rising_Callback	16	static
+../Core/App/src/AppMain.c:429:6:_putchar	16	static

@@ -1,4 +1,6 @@
-Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
+Core/App/src/AppMain.o: ../Core/App/src/AppMain.c \
+ C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h \
+ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h \
  ../Core/Inc/stm32h5xx_hal_conf.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rcc.h \
@@ -33,7 +35,19 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h \
- C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ ../Core/Inc/main.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/App/lwip.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/lwipopts.h \
@@ -67,24 +81,20 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/sys.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/sys_arch.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- ../Core/Inc/FreeRTOSConfig.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/ethernetif.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP_RAW/App/app_ethernet.h \
- C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTClient.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPacket.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTConnect.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPublish.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTSubscribe.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTUnsubscribe.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTFormat.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/StackTrace.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTInterface.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h \
@@ -101,7 +111,8 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h
-../Core/Inc/main.h:
+C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h:
+C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
 ../Core/Inc/stm32h5xx_hal_conf.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rcc.h:
@@ -136,7 +147,19 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c ../Core/Inc/main.h \
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_eth_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_fdcan.h:
-C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+../Core/Inc/main.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/App/lwip.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/lwipopts.h:
@@ -170,24 +193,20 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/sys_arch.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
-../Core/Inc/FreeRTOSConfig.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h:
-../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/ethernetif.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP_RAW/App/app_ethernet.h:
-C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTClient.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPacket.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTConnect.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPublish.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTSubscribe.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTUnsubscribe.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTFormat.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/StackTrace.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTInterface.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h:

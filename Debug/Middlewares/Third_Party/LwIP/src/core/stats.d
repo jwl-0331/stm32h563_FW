@@ -39,7 +39,14 @@ Middlewares/Third_Party/LwIP/src/core/stats.o: \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/arch.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cc.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cpu.h
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cpu.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/def.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/stats.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/mem.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/memp.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_std.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_priv.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/mem_priv.h
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP/Target/lwipopts.h:
 ../Core/Inc/main.h:
@@ -81,3 +88,10 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/debug
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cc.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/system/arch/cpu.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/def.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/stats.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/mem.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/memp.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_std.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_priv.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/priv/mem_priv.h:

@@ -2009,7 +2009,7 @@
  * LWIP_SO_RCVBUF==1: Enable SO_RCVBUF processing.
  */
 #if !defined LWIP_SO_RCVBUF || defined __DOXYGEN__
-#define LWIP_SO_RCVBUF                  0
+#define LWIP_SO_RCVBUF                  1
 #endif
 
 /**
