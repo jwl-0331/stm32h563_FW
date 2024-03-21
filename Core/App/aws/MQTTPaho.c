@@ -72,7 +72,7 @@ void TaskSubMQTT(void* pvParameters)
     {
       //try to connect to the broker
       MQTTDisconnect(&s_MQTTClient);
-      MqttConnectBroker();
+      MqttConnectBroker("STM32SUBTask");
       osDelay(1000);
     }
     else
@@ -90,7 +90,14 @@ void TaskPubMQTT(void* pvParameters)
 
   while(1)
   {
-    if(s_MQTTClient.isconnected)
+    if(!s_MQTTClient.isconnected)
+    {
+      //try to connect to the broker
+      MQTTDisconnect(&s_MQTTClient);
+      MqttConnectBroker("STM32PUBTask");
+      osDelay(1000);
+    }
+    else
     {
       message.payload = (void*)str;
       message.payloadlen = strlen(str);
@@ -105,7 +112,7 @@ void TaskPubMQTT(void* pvParameters)
   }
 }
 
-int MqttConnectBroker()
+int MqttConnectBroker(char* ClientID)
 {
   int ret;
 
@@ -123,8 +130,8 @@ int MqttConnectBroker()
   MQTTPacket_connectData data = MQTTPacket_connectData_initializer;
   data.willFlag = 0;
   data.MQTTVersion = 3;
-  data.clientID.cstring = "STM32H5";
-  data.username.cstring = "STM32H5";
+  data.clientID.cstring = (char*)ClientID;
+  data.username.cstring = (char*)ClientID;
   data.password.cstring = "";
   data.keepAliveInterval = 60;
   data.cleansession = 1;
