@@ -1,3 +1,4 @@
+"./Core/App/aws/MQTTPaho.o"
 "./Core/App/src/AppMain.o"
 "./Core/Src/app_freertos.o"
 "./Core/Src/main.o"

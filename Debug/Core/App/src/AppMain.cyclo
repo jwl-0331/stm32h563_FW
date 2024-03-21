@@ -1,7 +1,7 @@
-../Core/App/src/AppMain.c:74:6:ethernetif_notify_conn_changed	2
-../Core/App/src/AppMain.c:91:6:AppMain	2
-../Core/App/src/AppMain.c:245:6:TaskMain	1
-../Core/App/src/AppMain.c:260:6:StartEchoTask	8
-../Core/App/src/AppMain.c:315:6:StartTcpClientTask	11
-../Core/App/src/AppMain.c:420:6:HAL_GPIO_EXTI_Rising_Callback	2
-../Core/App/src/AppMain.c:429:6:_putchar	1
+../Core/App/src/AppMain.c:77:6:ethernetif_notify_conn_changed	2
+../Core/App/src/AppMain.c:94:6:AppMain	2
+../Core/App/src/AppMain.c:250:6:TaskMain	1
+../Core/App/src/AppMain.c:265:6:StartEchoTask	8
+../Core/App/src/AppMain.c:320:6:StartTcpClientTask	11
+../Core/App/src/AppMain.c:425:6:HAL_GPIO_EXTI_Rising_Callback	2
+../Core/App/src/AppMain.c:434:6:_putchar	1

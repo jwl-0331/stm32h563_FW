@@ -1,0 +1,4 @@
+../Core/App/aws/MQTTPaho.c:36:6:MQTT_Init	8	static
+../Core/App/aws/MQTTPaho.c:41:6:TaskSubMQTT	16	static
+../Core/App/aws/MQTTPaho.c:75:5:MqttConnectBroker	120	static
+../Core/App/aws/MQTTPaho.c:121:6:MqttMessageArrived	24	static

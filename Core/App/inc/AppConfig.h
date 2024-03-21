@@ -30,7 +30,7 @@
 
 // Task Priority
 #define TASK_PRIORITY_MAIN                  osPriorityNormal
-//#define TASK_PRIORITY_MQTT                  osPriorityNormal
+#define TASK_PRIORITY_MQTT                  osPriorityNormal
 #define TASK_PRIORITY_DEBUG                 osPriorityLow
 #define TASK_PRIORITY_TCP                  osPriorityNormal
 
@@ -50,10 +50,6 @@
 #define SERVER_IP4  42
 #define SERVER_PORT 1234 //server listen port
 
-
-extern osThreadId_t g_hTaskMain;
-extern osThreadId_t echoTaskHandle;
-extern osThreadId_t tcpClientTaskHandle;
 
 void TaskMain(void* argument);
 void StartEchoTask(void const *argument);  //echo server task function

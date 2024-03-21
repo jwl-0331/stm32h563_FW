@@ -110,7 +110,8 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h \
+ C:/CubeWorspace/stm32h563_fw/Core/App/aws/MQTTPaho.h
 C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
@@ -223,3 +224,4 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/svDebug.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/ASCII_escape.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h:
+C:/CubeWorspace/stm32h563_fw/Core/App/aws/MQTTPaho.h:

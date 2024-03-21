@@ -21,6 +21,8 @@
 #include "svDebug.h"
 #include "svRingBuffer.h"
 
+#include "MQTTPaho.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,6 +57,7 @@ const osThreadAttr_t tcpClientTask_attributes = {
 
 ip_addr_t server_addr; //server address
 struct time_packet packet; //256 bytes time_packet structure
+
 
 /* FOR LWIP DEBUG MSG */
 /*
@@ -114,9 +117,11 @@ void AppMain()
   /* Init scheduler */
   osKernelInitialize();
 
+
   g_hTaskMain = osThreadNew(TaskMain, NULL, &TaskMain_attributes);
   echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
   tcpClientTaskHandle = osThreadNew(StartTcpClientTask, NULL, &tcpClientTask_attributes);
+  MQTT_Init();
 
   osKernelStart();
   /*With out RTOS */
