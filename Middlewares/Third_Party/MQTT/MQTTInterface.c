@@ -6,7 +6,7 @@
 #include "lwip/api.h"
 #include "lwip/sockets.h"
 
-#define MQTT_PORT	1883
+#define MQTT_PORT	192
 #define SERVER_IP1	192
 #define SERVER_IP2	168
 #define SERVER_IP3	1

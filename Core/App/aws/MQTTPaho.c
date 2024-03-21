@@ -31,11 +31,22 @@ const osThreadAttr_t TaskSubMQTT_attributes = {
 };
 
 
+/* MQTT - Publish Handlers*/
+osThreadId_t g_hTaskPubMQTT;
+const osThreadAttr_t TaskPubMQTT_attributes = {
+    .name = "mqttClientPubTask",
+    .priority = (osPriority_t) TASK_PRIORITY_MQTT,
+    .stack_size = STACK_SIZE_MQTT
+};
+
+
 void TaskSubMQTT(void* pvParameters);
+void TaskPubMQTT(void* pvParameters);
 
 void MQTT_Init()
 {
   g_hTaskSubMQTT = osThreadNew(TaskSubMQTT, NULL, &TaskSubMQTT_attributes);
+  g_hTaskPubMQTT = osThreadNew(TaskPubMQTT, NULL, &TaskPubMQTT_attributes);
 }
 
 void TaskSubMQTT(void* pvParameters)
@@ -69,6 +80,28 @@ void TaskSubMQTT(void* pvParameters)
       MQTTYield(&s_MQTTClient, 1000); //handle timer
       osDelay(100);
     }
+  }
+}
+
+void TaskPubMQTT(void* pvParameters)
+{
+  const char* str = "MQTT message from STM32";
+  MQTTMessage message;
+
+  while(1)
+  {
+    if(s_MQTTClient.isconnected)
+    {
+      message.payload = (void*)str;
+      message.payloadlen = strlen(str);
+
+      if(MQTTPublish(&s_MQTTClient, "test", &message) != MQTT_SUCCESS)
+      {
+        MQTTCloseSession(&s_MQTTClient);
+        net_disconnect(&s_Net);
+      }
+    }
+    osDelay(1000);
   }
 }
 

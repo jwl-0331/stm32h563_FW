@@ -1,4 +1,5 @@
-../Core/App/aws/MQTTPaho.c:36:6:MQTT_Init	1
-../Core/App/aws/MQTTPaho.c:41:6:TaskSubMQTT	6
-../Core/App/aws/MQTTPaho.c:75:5:MqttConnectBroker	8
-../Core/App/aws/MQTTPaho.c:121:6:MqttMessageArrived	2
+../Core/App/aws/MQTTPaho.c:46:6:MQTT_Init	1
+../Core/App/aws/MQTTPaho.c:52:6:TaskSubMQTT	6
+../Core/App/aws/MQTTPaho.c:86:6:TaskPubMQTT	3
+../Core/App/aws/MQTTPaho.c:108:5:MqttConnectBroker	8
+../Core/App/aws/MQTTPaho.c:154:6:MqttMessageArrived	2
