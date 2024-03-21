@@ -86,15 +86,15 @@ Core/App/src/AppMain.o: ../Core/App/src/AppMain.c \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP_RAW/App/app_ethernet.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTClient.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPacket.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTConnect.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPublish.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTSubscribe.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTUnsubscribe.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTFormat.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/StackTrace.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTInterface.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTClient.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPacket.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTConnect.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPublish.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTSubscribe.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTUnsubscribe.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTFormat.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/StackTrace.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/MQTT/MQTTInterface.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h \
@@ -199,15 +199,15 @@ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/tcpip
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/api.h:
 C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/LWIP_RAW/App/app_ethernet.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTClient.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPacket.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTConnect.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPublish.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTSubscribe.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTUnsubscribe.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTFormat.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/StackTrace.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTInterface.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTClient.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPacket.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTConnect.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPublish.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTSubscribe.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTUnsubscribe.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTFormat.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/StackTrace.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/MQTT/MQTTInterface.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/LED.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/UART.h:

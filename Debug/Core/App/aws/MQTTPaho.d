@@ -1,14 +1,14 @@
 Core/App/aws/MQTTPaho.o: ../Core/App/aws/MQTTPaho.c \
  ../Core/App/aws/MQTTPaho.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTClient.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPacket.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTConnect.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPublish.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTSubscribe.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTUnsubscribe.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTFormat.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/StackTrace.h \
- C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTInterface.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTClient.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPacket.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTConnect.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPublish.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTSubscribe.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTUnsubscribe.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTFormat.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/StackTrace.h \
+ C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/MQTT/MQTTInterface.h \
  ../Core/Inc/FreeRTOSConfig.h \
  C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h \
  C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h \
@@ -102,15 +102,15 @@ Core/App/aws/MQTTPaho.o: ../Core/App/aws/MQTTPaho.c \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svRingBuffer.h \
  C:/CubeWorspace/stm32h563_fw/Middlewares/Solvine/Utils/inc/svCLI.h
 ../Core/App/aws/MQTTPaho.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTClient.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPacket.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTConnect.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTPublish.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTSubscribe.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTUnsubscribe.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/MQTTFormat.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTPacket/StackTrace.h:
-C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/MQTT/MQTTInterface.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTClient.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPacket.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTConnect.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTPublish.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTSubscribe.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTUnsubscribe.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/MQTTFormat.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/StackTrace.h:
+C:/CubeWorspace/stm32h563_fw/Middlewares/Third_Party/aws/MQTT/MQTTInterface.h:
 ../Core/Inc/FreeRTOSConfig.h:
 C:/CubeWorspace/stm32h563_fw/Core/App/inc/AppConfig.h:
 C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:

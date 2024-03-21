@@ -10,8 +10,9 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Middlewares/Third_Party/lwrb/src/subdir.mk
--include Middlewares/Third_Party/MQTT/MQTTPacket/subdir.mk
--include Middlewares/Third_Party/MQTT/subdir.mk
+-include Middlewares/Third_Party/aws/lib/MQTT/MQTTPacket/subdir.mk
+-include Middlewares/Third_Party/aws/lib/MQTT/subdir.mk
+-include Middlewares/Third_Party/aws/MQTT/subdir.mk
 -include Middlewares/Third_Party/LwIP/system/OS/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/netif/ppp/polarssl/subdir.mk
 -include Middlewares/Third_Party/LwIP/src/netif/ppp/subdir.mk
