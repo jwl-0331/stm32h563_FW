@@ -69,7 +69,7 @@
 /*#define HAL_XSPI_MODULE_ENABLED */
 /*#define HAL_OTFDEC_MODULE_ENABLED */
 /*#define HAL_PKA_MODULE_ENABLED */
-/*#define HAL_RNG_MODULE_ENABLED */
+#define HAL_RNG_MODULE_ENABLED
 #define HAL_RTC_MODULE_ENABLED
 /*#define HAL_SAI_MODULE_ENABLED */
 /*#define HAL_SD_MODULE_ENABLED */
@@ -250,17 +250,6 @@
 #define  USE_HAL_USART_REGISTER_CALLBACKS     0U    /* USART register callback disabled     */
 #define  USE_HAL_WWDG_REGISTER_CALLBACKS      0U    /* WWDG register callback disabled      */
 #define  USE_HAL_XSPI_REGISTER_CALLBACKS      0U    /* XSPI register callback disabled      */
-
-/* ########################### Ethernet Configuration ######################### */
-#define ETH_TX_DESC_CNT         4U  /* number of Ethernet Tx DMA descriptors */
-#define ETH_RX_DESC_CNT         4U  /* number of Ethernet Rx DMA descriptors */
-
-#define ETH_MAC_ADDR0    ((uint8_t)0x02)
-#define ETH_MAC_ADDR1    ((uint8_t)0x00)
-#define ETH_MAC_ADDR2    ((uint8_t)0x00)
-#define ETH_MAC_ADDR3    ((uint8_t)0x00)
-#define ETH_MAC_ADDR4    ((uint8_t)0x00)
-#define ETH_MAC_ADDR5    ((uint8_t)0x00)
 
 /* ############################################ SPI peripheral configuration ######################################## */
 

@@ -56,7 +56,6 @@
 extern UART_HandleTypeDef huart2;
 
 /* USER CODE END Variables */
-/* Definitions for defaultTask */
 
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,6 +78,7 @@ void vApplicationStackOverflowHook(xTaskHandle xTask, char *pcTaskName)
 }
 
 /* USER CODE END FunctionPrototypes */
+
 
 
 /* Private application code --------------------------------------------------*/

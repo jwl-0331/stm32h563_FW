@@ -20,10 +20,11 @@
 #include "main.h"
 #include "string.h"
 #include "cmsis_os2.h"
-
+#include "rng.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "BSPConfig.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +56,8 @@ UART_HandleTypeDef hlpuart1;
 extern UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
+extern RNG_HandleTypeDef hrng;
+
 extern RTC_HandleTypeDef hrtc;
 
 /* USER CODE BEGIN PV */
@@ -74,7 +77,7 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void StartDefaultTask(void *argument);
+void MX_FREERTOS_Init(void);
 static void MX_GPIO_Init(void);
 static void MX_FLASH_Init(void);
 static void MX_ICACHE_Init(void);
@@ -84,6 +87,7 @@ static void MX_LPUART1_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 //static void MX_FDCAN1_Init(void);
 //static void MX_ETH_Init(void);
+//static void MX_RNG_Init(void);
 /* USER CODE BEGIN PFP */
 
 extern void AppMain(void);
@@ -142,6 +146,7 @@ int main(void)
   MX_USART3_UART_Init();
   //MX_FDCAN1_Init();
   //MX_ETH_Init();
+  MX_RNG_Init();
   /* USER CODE BEGIN 2 */
   printf("Don't remove this printf to prevent hard fault.\r\n");
 #if 0
@@ -160,7 +165,6 @@ int main(void)
 #endif
   /* USER CODE END 2 */
 
-  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -190,9 +194,11 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_LSI
+                              |RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS_DIGITAL;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLL1_SOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 1;
@@ -234,13 +240,13 @@ void SystemClock_Config(void)
 //{
 //
 //  /* USER CODE BEGIN ETH_Init 0 */
-//
+////
 //  /* USER CODE END ETH_Init 0 */
 //
 //   static uint8_t MACAddr[6];
 //
 //  /* USER CODE BEGIN ETH_Init 1 */
-//
+////
 //  /* USER CODE END ETH_Init 1 */
 //  heth.Instance = ETH;
 //  MACAddr[0] = 0x00;
@@ -256,7 +262,7 @@ void SystemClock_Config(void)
 //  heth.Init.RxBuffLen = 1524;
 //
 //  /* USER CODE BEGIN MACADDRESS */
-//
+////
 //  /* USER CODE END MACADDRESS */
 //
 //  if (HAL_ETH_Init(&heth) != HAL_OK)
@@ -269,7 +275,7 @@ void SystemClock_Config(void)
 //  TxConfig.ChecksumCtrl = ETH_CHECKSUM_IPHDR_PAYLOAD_INSERT_PHDR_CALC;
 //  TxConfig.CRCPadCtrl = ETH_CRC_PAD_INSERT;
 //  /* USER CODE BEGIN ETH_Init 2 */
-//
+////
 //  /* USER CODE END ETH_Init 2 */
 //
 //}
@@ -283,11 +289,11 @@ void SystemClock_Config(void)
 //{
 //
 //  /* USER CODE BEGIN FDCAN1_Init 0 */
-//
+////
 //  /* USER CODE END FDCAN1_Init 0 */
 //
 //  /* USER CODE BEGIN FDCAN1_Init 1 */
-//
+////
 //  /* USER CODE END FDCAN1_Init 1 */
 //  hfdcan1.Instance = FDCAN1;
 //  hfdcan1.Init.ClockDivider = FDCAN_CLOCK_DIV1;
@@ -312,7 +318,7 @@ void SystemClock_Config(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN FDCAN1_Init 2 */
-//
+////
 //  /* USER CODE END FDCAN1_Init 2 */
 //
 //}
@@ -430,11 +436,11 @@ static void MX_LPUART1_UART_Init(void)
 //{
 //
 //  /* USER CODE BEGIN USART2_Init 0 */
-//////////////
+////////////////
 //  /* USER CODE END USART2_Init 0 */
 //
 //  /* USER CODE BEGIN USART2_Init 1 */
-//////////////
+////////////////
 //  /* USER CODE END USART2_Init 1 */
 //  huart2.Instance = USART2;
 //  huart2.Init.BaudRate = 115200;
@@ -464,7 +470,7 @@ static void MX_LPUART1_UART_Init(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN USART2_Init 2 */
-////////////////
+//////////////////
 //  /* USER CODE END USART2_Init 2 */
 //
 //}
@@ -518,6 +524,33 @@ static void MX_USART3_UART_Init(void)
 }
 
 /**
+  * @brief RNG Initialization Function
+  * @param None
+  * @retval None
+  */
+//static void MX_RNG_Init(void)
+//{
+//
+//  /* USER CODE BEGIN RNG_Init 0 */
+//
+//  /* USER CODE END RNG_Init 0 */
+//
+//  /* USER CODE BEGIN RNG_Init 1 */
+//
+//  /* USER CODE END RNG_Init 1 */
+//  hrng.Instance = RNG;
+//  hrng.Init.ClockErrorDetection = RNG_CED_ENABLE;
+//  if (HAL_RNG_Init(&hrng) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//  /* USER CODE BEGIN RNG_Init 2 */
+//
+//  /* USER CODE END RNG_Init 2 */
+//
+//}
+
+/**
   * @brief RTC Initialization Function
   * @param None
   * @retval None
@@ -526,13 +559,13 @@ static void MX_USART3_UART_Init(void)
 //{
 //
 //  /* USER CODE BEGIN RTC_Init 0 */
-//////
+////////
 //  /* USER CODE END RTC_Init 0 */
 //
 //  RTC_PrivilegeStateTypeDef privilegeState = {0};
 //
 //  /* USER CODE BEGIN RTC_Init 1 */
-//////
+////////
 //  /* USER CODE END RTC_Init 1 */
 //
 //  /** Initialize RTC Only
@@ -560,7 +593,7 @@ static void MX_USART3_UART_Init(void)
 //    Error_Handler();
 //  }
 //  /* USER CODE BEGIN RTC_Init 2 */
-//////
+////////
 //  /* USER CODE END RTC_Init 2 */
 //
 //}

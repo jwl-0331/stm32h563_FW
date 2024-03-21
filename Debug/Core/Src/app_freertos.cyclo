@@ -1,1 +1,1 @@
-../Core/Src/app_freertos.c:72:6:vApplicationStackOverflowHook	1
+../Core/Src/app_freertos.c:71:6:vApplicationStackOverflowHook	1

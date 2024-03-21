@@ -25,6 +25,8 @@ Middlewares/Solvine/Utils/src/svCLI.o: \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_flash_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_pwr.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_pwr_ex.h \
+ ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rng.h \
+ ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rng_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rtc.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rtc_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_tim.h \
@@ -64,6 +66,8 @@ C:/CubeWorspace/stm32h563_fw/Drivers/BSP/inc/BSPConfig.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_flash_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_pwr.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_pwr_ex.h:
+../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rng.h:
+../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rng_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rtc.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rtc_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_tim.h:

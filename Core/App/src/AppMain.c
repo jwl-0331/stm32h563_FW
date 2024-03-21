@@ -121,7 +121,7 @@ void AppMain()
   g_hTaskMain = osThreadNew(TaskMain, NULL, &TaskMain_attributes);
   echoTaskHandle = osThreadNew(StartEchoTask, NULL, &echoTask_attributes);
   tcpClientTaskHandle = osThreadNew(StartTcpClientTask, NULL, &tcpClientTask_attributes);
-  MQTT_Init();
+  //MQTT_Init();
 
   osKernelStart();
   /*With out RTOS */
